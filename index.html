@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor unidades</h1>
+
+    <div class="opciones_btn">
+        <button id="peso" onclick="ponerSelect(this)">peso</button>
+        <button id="temperatura" onclick="ponerSelect(this)">temperatura</button>
+        <button id="distancia" onclick="ponerSelect(this)">distancia</button>
+        <button id="tiempo" onclick="ponerSelect(this)">tiempo</button>
+    </div>
+    
+    <div class="container">
+    <h3 id="tit">Convertir</h3>
+    <div class="contenedor">
+        
+        <div class="izquierda">
+            <div class="de">
+            <h3>de:</h3>
+            <select  id="opciones_originales">
+                    <option value="kg">kg</option>
+                    <option value="lb">libra</option>
+                    <option value="arroba">arroba</option>
+                    <option value="onza">onzas</option>
+            </select>
+            
+            </div>
+            
+            <div class="a">
+                <h3>a:</h3>
+                <select  id="opciones_finales">
+                    <option value="kg">kg</option>
+                    <option value="lb">libra</option>
+                    <option value="arroba">arroba</option>
+                    <option value="gramos">gramos</option>
+                    <option value="onza">onzas</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="derecha">
+            
+            <input type="text" placeholder="valor a transformar" id="valor">
+
+            <div id="resultado" style="text-align: center;"></div>
+            <input type="text" placeholder="resultado" id="result">
+
+            
+        </div>
+    </div>
+    <button id="botoncito">Calcular</button>        
+</div>
+    <script type="module" src="./js/app.js"></script>
+    <script>
+    const selecitionInicial_1 = document.getElementById("opciones_originales")
+    const selecitionFinal_1 = document.getElementById("opciones_finales")
+    
+    const titulo = document.getElementById('tit')
+    const myDic = {
+        'peso':  ['kg','lb','arroba','gramos','onza'],
+        'distancia':[ 'm','km','milla','yarda','codo'],
+        'temperatura':['kelvin','fahrenheit','celsius'],
+        'tiempo':['seg','minutos','horas']
+
+    }
+    function ponerSelect(e){
+        titulo.textContent = e.id
+       
+        
+        selecitionInicial_1.innerHTML=""
+        selecitionFinal_1.innerHTML=""
+        myDic[e.id].forEach((element) => {
+            let opcion = document.createElement('option')
+            opcion.value = element
+            opcion.textContent = element
+
+            selecitionInicial_1.appendChild(opcion)
+            
+
+        });
+        myDic[e.id].forEach((element) => {
+            let opcion = document.createElement('option')
+            opcion.value = element
+            opcion.textContent = element
+
+            selecitionFinal_1.appendChild(opcion)
+    
+        });
+        
+    }
+
+
+    </script>
+
+</body>
+</html>

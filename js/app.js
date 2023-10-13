@@ -27,7 +27,7 @@ function convertir(){
             valor_resultado = calcularDistM(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);
           break;
         case "peso":
-            valor_resultado = calcularPesoKg(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);
+            valor_resultado = calcularPesoKg(selecitionInicial.value,selecitionFinal.value,mivalor.value);
           break;
         case "tiempo":
             valor_resultado = horita(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);

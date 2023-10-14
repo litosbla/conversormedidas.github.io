@@ -18,7 +18,7 @@
     </div>
     
     <div class="container">
-    <h3 id="tit">peso</h3>
+    <h3 id="tit"></h3> <!-- el error esta aki-->
     <div class="contenedor">
         
         <div class="izquierda">
@@ -59,10 +59,20 @@
 </div>
     <script type="module" src="./js/app.js"></script>
     <script>
+    
     const selecitionInicial_1 = document.getElementById("opciones_originales")
     const selecitionFinal_1 = document.getElementById("opciones_finales")
     
     const titulo = document.getElementById('tit')
+    
+    if (localStorage.getItem("variable_general")){ // si existe
+        titulo.innerText=localStorage.getItem("variable_general")
+    }
+    else{
+        console.log("pasa por aca")
+        localStorage.setItem("variable_general",titulo.textContent)
+        //titulo.innerText=titulo.textContent
+    }
     const myDic = {
         'peso':  ['kg','lb','arroba','gramos','onza'],
         'distancia':[ 'm','km','milla','yarda','codo'],
@@ -72,7 +82,7 @@
     }
     function ponerSelect(e){
         titulo.textContent = e.id
-       
+        localStorage.setItem("variable_general",e.id)
         
         selecitionInicial_1.innerHTML=""
         selecitionFinal_1.innerHTML=""
@@ -82,7 +92,6 @@
             opcion.textContent = element
 
             selecitionInicial_1.appendChild(opcion)
-            
 
         });
         myDic[e.id].forEach((element) => {

@@ -21,7 +21,7 @@ function convertir(){
     switch (titu.textContent) {
         case "temperatura":
             
-            valor_resultado = calorcito(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(2);
+            valor_resultado = calorcito(selecitionInicial.value,selecitionFinal.value,mivalor.value);
           break;
         case "distancia":
             valor_resultado = calcularDistM(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(2);

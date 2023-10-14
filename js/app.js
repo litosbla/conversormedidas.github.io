@@ -21,16 +21,16 @@ function convertir(){
     switch (titu.textContent) {
         case "temperatura":
             
-            valor_resultado = calorcito(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);
+            valor_resultado = calorcito(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(2);
           break;
         case "distancia":
-            valor_resultado = calcularDistM(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);
+            valor_resultado = calcularDistM(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(2);
           break;
         case "peso":
             valor_resultado = calcularPesoKg(selecitionInicial.value,selecitionFinal.value,mivalor.value);
           break;
         case "tiempo":
-            valor_resultado = horita(selecitionInicial.value,selecitionFinal.value,mivalor.value).toFixed(3);
+            valor_resultado = horita(selecitionInicial.value,selecitionFinal.value,mivalor.value);
           break;
     
         default:
